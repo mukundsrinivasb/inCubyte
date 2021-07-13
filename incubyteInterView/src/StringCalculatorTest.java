@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class StringCalculatorTest {
     @Test
+    //Pass a string with length two
     void addTwoNumber() {
         StringCalculator stringCalc = new StringCalculator();
         assertEquals(1, stringCalc.add("1,0"));
@@ -13,7 +14,7 @@ public class StringCalculatorTest {
         assertEquals(12, stringCalc.add("8,4"));
 
     }
-
+    //Pass and empty string and a string with length one
     @Test
     void addNoneOne() {
         StringCalculator stringCalc = new StringCalculator();
@@ -24,6 +25,7 @@ public class StringCalculatorTest {
     }
 
     @Test
+    //Pass many inputs
     void addMany() {
         StringCalculator stringCalc = new StringCalculator();
         assertEquals(55, stringCalc.add("1\n2,3,4,5,6,7,8,9,1,9"));
@@ -35,6 +37,7 @@ public class StringCalculatorTest {
     }
 
     @Test
+    //Test with delimiters
     void funnyDelimiters() {
         StringCalculator stringCalc = new StringCalculator();
         assertEquals(55, stringCalc.add("//;\n1;//;\n2;//;\n3;4,5,6,7,8,9,1,9"));
@@ -44,6 +47,7 @@ public class StringCalculatorTest {
     }
 
     @Test()
+    //Test with negatives
     void testSingleNegativeInput() {
         StringCalculator stringCalc = new StringCalculator();
         assertThrows(IllegalArgumentException.class, () -> stringCalc.add("-7"),"negatives not allowed -7");
@@ -52,6 +56,7 @@ public class StringCalculatorTest {
 
     }
     @Test
+    //Test with more than one negatives and delimiters
     void testManyNegativeInputs(){
         StringCalculator stringCalculator = new StringCalculator();
         assertThrows(IllegalArgumentException.class,()->stringCalculator.add("-1,-5,-6,-7,-4"),"negatives not allowed -1,-5,-6,-7,-4");
