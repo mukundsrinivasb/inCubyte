@@ -44,12 +44,18 @@ public class StringCalculatorTest {
     }
 
     @Test()
-    void testNegativeInputs() {
+    void testSingleNegativeInput() {
         StringCalculator stringCalc = new StringCalculator();
-        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("-7"));
-        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("\\;-8"));
-        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("//;\n-1;//;\n2;//;\n3;4,5,6,\n7,-8,9,1,9"));
+        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("-7"),"negatives not allowed -7");
+        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("\\;-8"),"negatives not allowed -8");
+        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("//;\n-1;//;\n2;//;\n3;4,5,6,\n7,-8,9,1,9"),"negatives not allowed -1");
 
     }
+    @Test
+    void testManyNegativeInputs(){
+        StringCalculator stringCalculator = new StringCalculator();
+
+    }
+
 
 }
