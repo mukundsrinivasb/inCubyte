@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/incuByte.iml" filepath="$PROJECT_DIR$/.idea/incuByte.iml" />
+      <module fileurl="file://$PROJECT_DIR$/incubyteInterView/incubyteInterView.iml" filepath="$PROJECT_DIR$/incubyteInterView/incubyteInterView.iml" />
     </modules>
   </component>
 </project>

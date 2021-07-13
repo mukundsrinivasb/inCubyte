@@ -1,5 +1,3 @@
-package comp1110.homework.LoL;
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,15 +44,12 @@ public class StringCalculatorTest {
     }
 
     @Test()
-    void tegativeInputTest() {
+    void testNegativeInputs() {
         StringCalculator stringCalc = new StringCalculator();
         assertThrows(IllegalArgumentException.class, () -> stringCalc.add("-7"));
         assertThrows(IllegalArgumentException.class, () -> stringCalc.add("\\;-8"));
+        assertThrows(IllegalArgumentException.class, () -> stringCalc.add("//;\n-1;//;\n2;//;\n3;4,5,6,\n7,-8,9,1,9"));
 
     }
 
-    @Test
-    void expectNegatives() {
-
-    }
 }
